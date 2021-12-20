@@ -24,6 +24,7 @@ npm i express@next mongoose cors
 ```
 
 - 其中 mongoose 用于连接数据库，cors 用于跨域请求
+- mongodb-compass 用于可视化连接 mongodb
 
 ## ref
 

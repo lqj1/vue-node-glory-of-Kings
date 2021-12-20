@@ -22,8 +22,13 @@ export default {
     }
   },
   methods: {
-    save () {
-      this.$http.post()
+    async save () {
+      // 提交到categories,提交参数this.model
+      const res = await this.$http.post('categories', this.model)
+      this.$router.push('/categories/list')
+      this.$message({
+        type: 'success'
+      })
     }
   }
 }
