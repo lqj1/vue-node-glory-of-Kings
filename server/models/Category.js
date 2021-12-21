@@ -1,9 +1,22 @@
 const mongoose = require('mongoose');
+
 const schema = new mongoose.Schema({
-  // 定义模型的字段
-  name: {
-    type: String,
-  },
+  name: { type: String },
+  parent: { type: mongoose.SchemaTypes.ObjectId, ref: 'Category' },
 });
-// 导出mongoose模型,给admin里的index.js使用
+
+// schema.virtual('children', {
+//   localField: '_id',
+//   foreignField: 'parent',
+//   justOne: false,
+//   ref: 'Category'
+// })
+
+// schema.virtual('newsList', {
+//   localField: '_id',
+//   foreignField: 'categories',
+//   justOne: false,
+//   ref: 'Article'
+// })
+
 module.exports = mongoose.model('Category', schema);
