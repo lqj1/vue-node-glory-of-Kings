@@ -39,3 +39,11 @@ https://www.bilibili.com/video/BV1A4411Y7fi?p=4&spm_id_from=pageDriver
 ## admin
 
 使用`vue add element`导入 element-ui 组件
+
+## 遇到的问题
+
+- 安装 mongodb 的时候，不要选左下角的 compass，等安装完后再单独下载安装包安装，安装完之后提示 "MongoDB Server" failed to start，直接忽略，后面会解决。
+- 安装 mongodb 之后，在服务中启动 Mongodb 会出现错误 1053
+  - 首先清楚之前的数据库，`sc delete MongoDB`
+  - 然后配置以下代码，路径根据自己安装的去修改，这里要先将 mongodb 的 bin 目录添加到系统环境变量中去，就可以不用在 bin 目录下执行 mongod 了。
+    - `mongod --bind_ip 0.0.0.0 --logpath D:\MongoDB\Server\5.0\log\mongo.log --logappend --dbpath D:\MongoDB\Server\5.0\data\db --port 27017 --serviceName="MongoDB" --serviceDisplayName "MongoDB" --install`

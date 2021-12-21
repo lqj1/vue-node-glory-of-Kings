@@ -5,5 +5,5 @@ const schema = new mongoose.Schema({
     type: String,
   },
 });
-// 导出mongoose模型
+// 导出mongoose模型,给admin里的index.js使用
 module.exports = mongoose.model('Category', schema);

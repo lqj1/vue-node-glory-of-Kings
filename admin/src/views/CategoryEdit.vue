@@ -7,7 +7,8 @@
         <el-input v-model="model.name"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary">保存</el-button>
+        <el-button type="primary"
+                   native-type="submit">保存</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -23,8 +24,10 @@ export default {
   },
   methods: {
     async save () {
+      console.log('model', this.model);
       // 提交到categories,提交参数this.model
       const res = await this.$http.post('categories', this.model)
+      console.log('res', res);
       this.$router.push('/categories/list')
       this.$message({
         type: 'success'
